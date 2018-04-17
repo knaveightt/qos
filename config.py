@@ -74,7 +74,7 @@ keys = [
     Key([mod], "w", lazy.spawn(terminal), desc="Launch Window Switcher"),
     Key([mod, "shift"], "x", lazy.spawn(terminal), desc="Launch X Kill"),
     Key([mod, "shift"], "z", lazy.spawn(terminal), desc="Lock Screen"),
-    Key([mod], "x", lazy.spawn(terminal), desc="Launch Extended Prompt"),
+    Key([mod], "x", lazy.spawncmd(), desc="Launch Extended Prompt"),
 
     # ScratchPad
     Key([mod], "s", lazy.group["scratchterm"].dropdown_toggle("term"), desc="Launch Extended Prompt"),

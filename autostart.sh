@@ -6,3 +6,4 @@
 
 waypaper --restore &
 nm-applet &
+cbatticon &
