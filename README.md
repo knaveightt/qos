@@ -23,3 +23,10 @@ This configuration has options to two alternatives that I like to use.
 ## Installation
 Installation instructions are provided below. Following this section is a section dedicated to describing the various applications, tweaks, and unique changes this setup provides.
 
+> WIP NOTES
+> Phases, Phase 1:
+> qtile, nitrogen, sddm, NetworkManager, emacs service
+>
+> Future Phases
+> rofi
+

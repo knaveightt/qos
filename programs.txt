@@ -1,4 +1,7 @@
 qtile
 
 sddm
-dbus
+dbus, elogind
+(+ theme sugarcandy, dependencies and qt5-graphicaleffects)
+
+(WIP: NetworkManager)
