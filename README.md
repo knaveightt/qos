@@ -25,7 +25,7 @@ Installation instructions are provided below. Following this section is a sectio
 
 > WIP NOTES
 > Phases, Phase 1:
-> qtile, nitrogen, sddm, NetworkManager, emacs service
+> qtile (config, autostart), nitrogen (link to wallpaper), sddm (config), NetworkManager+depends, emacs service (files)
 >
 > Future Phases
 > rofi
