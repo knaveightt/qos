@@ -25,7 +25,7 @@
 # SOFTWARE.
 
 from libqtile import bar, layout, qtile, widget
-from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
+from libqtile.config import Click, Drag, Group, Key, KeyChord, Match, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
@@ -67,23 +67,34 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "space", lazy.spawn(terminal), desc="Launch Emacs"),
     Key([mod], "p", lazy.spawn(terminal), desc="Launch Program Launcher"),
-    Key([mod, "shift"], "p", lazy.spawn(terminal), desc="Launch Command Launcher"),
+    Key([mod, "shift"], "p", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "e", lazy.spawn(terminal), desc="Launch Terminal File Explorer"),
     Key([mod], "w", lazy.spawn(terminal), desc="Launch Window Switcher"),
-    Key([mod, "shift"], "q", lazy.spawn(terminal), desc="Launch X Kill"),
+    Key([mod, "shift"], "x", lazy.spawn(terminal), desc="Launch X Kill"),
     Key([mod, "shift"], "z", lazy.spawn(terminal), desc="Lock Screen"),
-
-    
     Key([mod], "x", lazy.spawn(terminal), desc="Launch Extended Prompt"),
 
     # ScratchPad
     Key([mod], "s", lazy.group["scratchterm"].dropdown_toggle("term"), desc="Launch Extended Prompt"),
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
 
+    # Laptop Special Keys
+    # (for Chromebook. You can use Shift+Key to send original Function Key)
+    Key([], "F1", lazy.layout.previous(), desc="Toggle"),
+    Key([], "F2", lazy.layout.next(), desc="Toggle"),
+    Key([], "F3", lazy.screen.toggle_group(), desc="Toggle"),
+    Key([], "F4", lazy.window.toggle_fullscreen(), desc="Toggle"),
+    Key([], "F5", lazy.to_layout_index(1), desc="Toggle"),
+    Key([], "F6", lazy.layout.next(), desc="Toggle"),
+    Key([], "F7", lazy.layout.next(), desc="Toggle"),
+    Key([], "F8", lazy.layout.next(), desc="Toggle"),
+    Key([], "F9", lazy.layout.next(), desc="Toggle"),
+    Key([], "F10", lazy.layout.next(), desc="Toggle"),
+    Key([], "XF86Tools", lazy.spawn(terminal), desc="Toggle"),
+  
     # Control Keybinds
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod, "control"], "p", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
 
 # Custom TreeTab Control Keybinds
@@ -149,21 +160,9 @@ from libqtile.dgroups import simple_key_binder
 dgroups_key_binder = simple_key_binder("mod4")
 
 layouts = [
-    # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
     layout.MonadTall(),
     layout.Max(),
     layout.TreeTab(),
-
-    # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
 ]
 
 widget_defaults = dict(
