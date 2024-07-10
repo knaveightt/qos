@@ -148,11 +148,11 @@ for vt in range(1, 8):
     )
 
 groups = [
-    Group("1", layout="monadtall"),
-    Group("2", layout="monadtall"),
-    Group("3", layout="monadtall"),
-    Group("4", layout="monadtall"),
-    Group("5", layout="monadtall"),
+    Group("", layout="monadtall"),
+    Group("", layout="monadtall"),
+    Group("", layout="monadtall"),
+    Group("", layout="monadtall"),
+    Group("", layout="monadtall"),
     ScratchPad("scratchterm",[DropDown("term","sakura -f 'JetBrainsMono Nerd Font 9'", x=0.12, y=0.02, width=0.75, height=0.6, on_focus_lost_hide=False)]),
 ]
 
@@ -166,35 +166,127 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="sans",
+    font="JetBrainsMono Nerd Font",
     fontsize=12,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
 
+def init_widgets_list():
+    widgets_list = [
+        widget.TextBox(
+            text="",
+            foreground = "#00AA00",
+            background = "#666666",
+            fontsize=12,
+            padding = 10,
+            markup = True,
+            fmt='<span font_size="130%">{}</span>',
+            ),
+        widget.Sep(
+            linewidth=0,
+            padding=0,
+            foreground = "#666666",
+            background = "#666666",
+            ),
+        widget.TextBox(
+            text="",
+            foreground = "#666666",
+            background = "#333333",
+            fontsize=22,
+            padding=0,
+            ),
+        widget.Sep(
+            linewidth=3,
+            padding=0,
+            foreground = "#333333",
+            background = "#333333",
+            ),
+        widget.GroupBox(
+            highlight_method='block',
+            foreground = "#0000AA",
+            background = "#333333",
+            fontsize = 12,
+            margin_x = 3,
+            padding = 6,
+            markup = True,
+            fmt='<tt>{}</tt>',
+            ),
+        widget.Sep(
+            linewidth=0,
+            padding=0,
+            foreground = "#333333",
+            background = "#333333",
+            ),
+        widget.Prompt(
+            background = "#333333",
+            prompt = 'Command: ',
+            ),
+        widget.TextBox(
+            text="",
+            foreground = "#333333",
+            background = "#000000",
+            fontsize=22,
+            padding=0,
+            ),
+        widget.Sep(
+            linewidth=3,
+            padding=0,
+            foreground = "#000000",
+            background = "#000000",
+            ),
+        widget.WindowName(),
+        widget.Sep(
+            linewidth=0,
+            padding=0,
+            foreground = "#000000",
+            background = "#000000",
+            ),
+        widget.TextBox(
+            text="",
+            foreground = "#333333",
+            background = "#000000",
+            fontsize=22,
+            padding=0,
+            ),
+        widget.Sep(
+            linewidth=3,
+            padding=0,
+            foreground = "#333333",
+            background = "#333333",
+            ),
+        widget.Clock(
+            format="%Y-%m-%d %a %I:%M %p",
+            background="#333333",
+            ),
+        widget.Sep(
+            linewidth=3,
+            padding=0,
+            foreground = "#333333",
+            background = "#333333",
+            ),
+        widget.TextBox(
+            text="",
+            foreground = "#666666",
+            background = "#333333",
+            fontsize=22,
+            padding=0,
+            ),
+        widget.Sep(
+            linewidth=3,
+            padding=0,
+            foreground = "#666666",
+            background = "#666666",
+            ),
+        widget.Systray(),
+        ]
+    return widgets_list
+
 screens = [
     Screen(
-        bottom=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                # widget.StatusNotifier(),
-                widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
-            ],
-            24,
+        top=bar.Bar(
+            widgets=init_widgets_list(),
+            size=24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
@@ -249,4 +341,4 @@ wl_input_rules = None
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmname = "LG3D"
+wmname = "Qtile"

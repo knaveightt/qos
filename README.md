@@ -28,5 +28,5 @@ Installation instructions are provided below. Following this section is a sectio
 > qtile (config, autostart), nitrogen (link to wallpaper), sddm (config), NetworkManager+depends, emacs service (files)
 >
 > Future Phases
-> rofi
+> rofi or fzf-based prompts
 
