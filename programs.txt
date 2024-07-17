@@ -4,4 +4,9 @@ sddm
 dbus, elogind
 (+ theme sugarcandy, dependencies and qt5-graphicaleffects)
 
+python3-pipx
+python3-gobject
+python3-gobject-devel
+(then pipx install waypaper)
+
 (WIP: NetworkManager)

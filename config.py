@@ -24,7 +24,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from libqtile import bar, layout, qtile, widget
+import os
+import subprocess
+from libqtile import bar, layout, qtile, widget, hook
 from libqtile.config import Click, Drag, Group, Key, KeyChord, Match, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
@@ -66,8 +68,8 @@ keys = [
     # Launchers and Applications
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "space", lazy.spawn(terminal), desc="Launch Emacs"),
-    Key([mod], "p", lazy.spawn(terminal), desc="Launch Program Launcher"),
-    Key([mod, "shift"], "p", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "p", lazy.spawncmd(), desc="Launch Program Launcher"),
+    Key([mod, "shift"], "p", lazy.spawn(terminal), desc="Spawn a command using a prompt widget"),
     Key([mod], "e", lazy.spawn(terminal), desc="Launch Terminal File Explorer"),
     Key([mod], "w", lazy.spawn(terminal), desc="Launch Window Switcher"),
     Key([mod, "shift"], "x", lazy.spawn(terminal), desc="Launch X Kill"),
@@ -148,10 +150,10 @@ for vt in range(1, 8):
     )
 
 groups = [
-    Group("", layout="monadtall"),
-    Group("", layout="monadtall"),
-    Group("", layout="monadtall"),
-    Group("", layout="monadtall"),
+    Group("", layout="max"),
+    Group("", layout="max"),
+    Group("", layout="max"),
+    Group("", layout="max"),
     Group("", layout="monadtall"),
     ScratchPad("scratchterm",[DropDown("term","sakura -f 'JetBrainsMono Nerd Font 9'", x=0.12, y=0.02, width=0.75, height=0.6, on_focus_lost_hide=False)]),
 ]
@@ -332,6 +334,12 @@ auto_minimize = True
 
 # When using the Wayland backend, this can be used to configure input devices.
 wl_input_rules = None
+
+# setup startup script
+@hook.subscribe.startup_once
+def start_once():
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.Popen([home])
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
