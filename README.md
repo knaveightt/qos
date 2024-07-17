@@ -9,7 +9,9 @@ Beyond that, a few assumptions are made in this setup.
 **Text Editing Environment**
 
 It is assumed the user has access to a text editor, such as Vim, Emacs, Nano, etc.
-This setup assumes the user is using my configuration of Emacs, named ["Knavemacs"](https://github.com/knaveightt/knavemacs)
+This setup assumes the user is using my configuration of Emacs, named
+["Knavemacs"](https://github.com/knaveightt/knavemacs), or neovim, named
+["neoknave"](https://github.com/knaveightt/neoknave).
 
 **Terminal Emulator**
 
@@ -25,7 +27,7 @@ Installation instructions are provided below. Following this section is a sectio
 
 > WIP NOTES
 > Phases, Phase 1:
-> qtile (config, autostart), nitrogen (link to wallpaper), sddm (config), NetworkManager+depends, emacs service (files)
+> qtile (config, autostart), waypaper (link to wallpaper), sddm (config), NetworkManager+depends, emacs service (files)
 >
 > Future Phases
 > rofi or fzf-based prompts
