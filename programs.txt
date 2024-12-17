@@ -10,3 +10,30 @@ python3-gobject-devel
 (then pipx install waypaper)
 
 (WIP: NetworkManager)
+
+* Core (After Foundational)
+
+** qtile
+
+** emacs as a service
+
+** sddm
+dbus, elogind
+sugarcandy theme, theme depdendencies, qt5-graphicaleffects
+
+*** waypaper
+waypaper dependencies such as python3-pipx, python3-gobject, python3-gobject-devel
+
+*** NetworkManager
+
+*** Sound Subsystem
+
+* Phase I (Application Standards)
+
+* Phase 2 (Look and Feel Theming)
+
+* Miscellanous Notes and Scratch
+
+** Top Bar Sections
+*** Right Section
+sound (click for volumn control), mpd details, clock (click for date) maybe RAM too, systray
