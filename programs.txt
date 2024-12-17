@@ -26,6 +26,9 @@ waypaper dependencies such as python3-pipx, python3-gobject, python3-gobject-dev
 
 *** NetworkManager
 
+*** Battery Icon
+cbatticon
+
 *** Sound Subsystem
 
 * Phase I (Application Standards)
