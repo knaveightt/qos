@@ -47,8 +47,18 @@ sddm
 firefox
  > Checkpoint: setup new github ssh keys if needed
 sakura
- > Checkpoint: add Fira Code Nerd Font to font installations
+ > Checkpoint: add JetBrainsMono Nerd Font to font installations
+ > May need to install unzip
  > Copy Over: sakura.conf
+neovim
+ > build from source using build instructions
+ > Copy Over personal neovim config repository
+cbatticon
+ > can use this to see if you have access to system tray
+NetworkManager
+ > also installed network-manager-applet
+ > disable dhcpdc and wpa_supplicant services
+ > start network manage servivce
 
 Customized Files:
 .xinitrc (add exec qtile start, comment out prior executions)
