@@ -46,10 +46,10 @@ sddm
  > Run Command: sudo ln -s /etc/sv/sddm /var/service/
 firefox
  > Checkpoint: setup new github ssh keys if needed
-sakura
+wezterm or sakura
  > Checkpoint: add JetBrainsMono Nerd Font to font installations
  > May need to install unzip
- > Copy Over: sakura.conf
+ > Copy Over: sakura.conf or wezterm.lua
 neovim
  > build from source using build instructions
  > Copy Over personal neovim config repository
