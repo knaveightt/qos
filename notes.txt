@@ -59,6 +59,7 @@ NetworkManager
  > also installed network-manager-applet
  > disable dhcpdc and wpa_supplicant services
  > start network manage servivce
+(Optional) tmux
 
 Customized Files:
 .xinitrc (add exec qtile start, comment out prior executions)
