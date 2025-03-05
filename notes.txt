@@ -72,3 +72,21 @@ Things to Check:
 - Can I see the current battery power?
 
 Additional Modifications:
+
+
+* Phase 2: Subsystems
+
+Packages Added:
+[base subsystem - autostart and qtile config] 
+ > (nothing, just update qtile config and autostart file)
+
+[notification subsystem]
+dunst
+
+Customized Files:
+config/dunstrc
+
+Things to Check:
+
+Additional Modifications:
+
