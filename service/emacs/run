@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# service run to execute emacs as a daemon
+# following advice at reddit.com/r/voidlinux/comments/uomxrx/how_to_daemonize_emacs_as_user_service/
+
+exec /usr/bin/emacs --fg-daemon 2>&1
