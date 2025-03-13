@@ -50,9 +50,8 @@ wezterm or sakura
  > Checkpoint: add JetBrainsMono Nerd Font to font installations
  > May need to install unzip
  > Copy Over: sakura.conf or wezterm.lua
-neovim
- > build from source using build instructions
- > Copy Over personal neovim config repository
+neovim or emacs
+ > Copy Over personal config repository
 cbatticon
  > can use this to see if you have access to system tray
 NetworkManager
@@ -82,6 +81,11 @@ Packages Added:
 
 [notification subsystem]
 dunst
+
+[custom services subsystem]
+ > create .local/services, copy emacs service files to .config/emacs/
+ > symlink the emacs services folder to .local/services
+ > ensure autostart runs: runsvdir -P "${HOME}/.local/service/"
 
 Customized Files:
 config/dunstrc
