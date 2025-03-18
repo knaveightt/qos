@@ -76,7 +76,7 @@ Additional Modifications:
 * Phase 2: Subsystems
 
 Packages Added:
-[base subsystem - autostart and qtile config] 
+[base subsystem - autostart and wm config] 
  > (nothing, just update qtile config and autostart file)
 
 [notification subsystem]
@@ -86,6 +86,9 @@ dunst
  > create .local/services, copy emacs service files to .config/emacs/
  > symlink the emacs services folder to .local/services
  > ensure autostart runs: runsvdir -P "${HOME}/.local/service/"
+
+[wallpaper subsystem]
+feh (or equivalent)
 
 Customized Files:
 config/dunstrc
