@@ -1,0 +1,47 @@
+* Checklist Description
+* Phase 0: Post Installation Basic Graphical Interface
+** Packages Added
+- [ ] ripgrep
+- [ ] fzf
+- [ ] acpi
+- [ ] git
+- [ ] emacs
+- [ ] wezterm
+- [ ] xdg-user-dirs
+  (run command xdg-user-dirs-update)
+- [ ] xdg-utils
+
+** Customizations
+- .bashrc (aliases if you wanted)
+
+** Confirmation Tests
+- Are the XDG folder environmental variables set?
+- Internet Connectivity Exists (using NetworkManager Service)
+- Basic X Session is working
+
+* Phase 1: Post Installation Configuration
+* Phase 2: Window Manager + Display Manager + Core Programs
+** Packages Added
+- [ ] qtile
+  (run in case of cache issue: sudo chown -Rc $USER:$USER $HOME)
+- [ ] sddm
+- [ ] network-manager-applet
+
+** Customizations
+- .xinitrc (add exec qtile start, comment out prior executions)
+
+** Confirmation Tests
+- Can I launch direction to qtile from startx, or from a display manager (sddm)
+- Can I manage my internet wifi better?
+  
+* Phase 3: Subsystem Configuration
+** Base Subsystem: Autostart and WM Config
+** Notification Subsystem: Dunst
+** Custom Services Subsystem (emacs server)
+** Wallpaper Subsystem
+** Screensaver and Screenlock Subsystems
+** Power Management Subsystem
+** Audio Subsystem and Codecs
+** Status Bar Subsystem
+** Windowing Subsystem (look and feel, compositor)
+** Display Manager Subsystem (Final Configuration)
