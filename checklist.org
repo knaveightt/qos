@@ -1,25 +1,55 @@
 * Checklist Description
-* Phase 0: Post Installation Basic Graphical Interface
+* Phase 0: Post Installation Basic Graphical Utilities
 ** Packages Added
+{x session or wayland session}
+- [ ] firefox
 - [ ] ripgrep
 - [ ] fzf
 - [ ] acpi
 - [ ] git
 - [ ] emacs
 - [ ] wezterm
+- [ ] screen
 - [ ] xdg-user-dirs
   (run command xdg-user-dirs-update)
 - [ ] xdg-utils
 
 ** Customizations
 - .bashrc (aliases if you wanted)
+- wezterm.lua
+- {minknavemacs repo for emacs config}
 
 ** Confirmation Tests
+- Basic X Session is working
 - Are the XDG folder environmental variables set?
 - Internet Connectivity Exists (using NetworkManager Service)
-- Basic X Session is working
 
-* Phase 1: Post Installation Configuration
+* Phase 1: Post Installation System Configuration
+** Make Zipper Faster
+/etc/zypp/zypp.conf
+(make max_concurrent connections to 10)
+
+** Update Hostname
+sudo hostnamectl set-hostname <new_hostname>
+confirm or edit in /etc/hosts
+verify using `hostname` command
+
+** Upgrade System
+sudo zypper ref (for thoroughness)
+logout of wm/de
+Ctrl+Alt+F1 for virtual terminal
+zypper dup --allow vendor-change (auto confims package repo updates)
+
+** Install Flatpak system
+sudo zypper install flatpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+** Install Microsoft Fonts
+get fetchmsttfonts (try this from YaST!)
+
+** Install Basic Devel TOols
+get patterns-devel-base-devel_basis (try this from YaST!)
+
 * Phase 2: Window Manager + Display Manager + Core Programs
 ** Packages Added
 - [ ] qtile
