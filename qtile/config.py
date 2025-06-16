@@ -32,7 +32,8 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = guess_terminal()
+#terminal = guess_terminal()
+terminal = "wezterm"
 
 keys = [
     # Window Switching, Movement, Sizing
@@ -155,7 +156,7 @@ groups = [
     Group("", layout="max"),
     Group("", layout="max"),
     Group("", layout="monadtall"),
-    ScratchPad("scratchterm",[DropDown("term","sakura -f 'JetBrainsMono Nerd Font 9'", x=0.12, y=0.02, width=0.75, height=0.6, on_focus_lost_hide=False)]),
+    ScratchPad("scratchterm",[DropDown("term","wezterm", x=0.12, y=0.02, width=0.75, height=0.6, on_focus_lost_hide=False)]),
 ]
 
 from libqtile.dgroups import simple_key_binder
