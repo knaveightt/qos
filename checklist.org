@@ -54,18 +54,19 @@ get patterns-devel-base-devel_basis (try this from YaST!)
 ** Packages Added
 - [ ] qtile
   (run in case of cache issue: sudo chown -Rc $USER:$USER $HOME)
-- [ ] sddm
-- [ ] network-manager-applet
+- [ ] network-manager-applet or nm-tray
+- [ ] lightdm with web-greeting (make sure no cfg file is put by web-greeting in /etc/xdg/lightdm folders)
 
 ** Customizations
 - .xinitrc (add exec qtile start, comment out prior executions)
+- /etc/lightdm/lightdm.conf
 
 ** Confirmation Tests
 - Can I launch direction to qtile from startx, or from a display manager (sddm)
 - Can I manage my internet wifi better?
   
 * Phase 3: Subsystem Configuration
-** Base Subsystem: Autostart and WM Config
+** Custom WM Subsystem: Autostart and WM Config
 ** Notification Subsystem: Dunst
 ** Custom Services Subsystem (emacs server)
 ** Wallpaper Subsystem
