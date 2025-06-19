@@ -66,11 +66,47 @@ get patterns-devel-base-devel_basis (try this from YaST!)
 - Can I manage my internet wifi better?
   
 * Phase 3: Subsystem Configuration
-** Custom WM Subsystem: Autostart and WM Config
+** Custom WM Subsystem Hook: Autostart and WM Config
+*** Packages Added
+- None
+*** Customizations
+- qtile config and autostart files
+*** Confirmation Tests
+- Not required
+  
 ** Notification Subsystem: Dunst
+*** Packages Added
+- dunst
+*** Customizations
+- qtile config and autostart files
+*** Confirmation Tests
+- Not required
+
 ** Custom Services Subsystem (emacs server)
+*** Packages Added
+- none
+*** Customizations
+- .config/systemd/user/emacs.service
+  (systemctl --user enable --now emacs)
+*** Confirmation Tests
+- Can I launch emacsclient -c
+
 ** Wallpaper Subsystem
+*** Packages Added
+- manual install of waypaper (https://github.com/anufrievroman/waypaper)
+*** Customizations
+- autostart.sh, ensure waypaper --restore is enabled
+*** Confirmation Tests
+- does the wallpaper restore
+
 ** Screensaver and Screenlock Subsystems
+*** Packages Added
+- xscreensaver (for x, already installed on base opensuse desktop)
+*** Customizations
+- pick your configurations
+*** Confirmation Tests
+- can I lock the screen with a key shortcut?
+
 ** Power Management Subsystem
 ** Audio Subsystem and Codecs
 ** Status Bar Subsystem

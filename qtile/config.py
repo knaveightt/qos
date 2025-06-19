@@ -68,13 +68,13 @@ keys = [
 
     # Launchers and Applications
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "space", lazy.spawn(terminal), desc="Launch Emacs"),
+    Key([mod], "space", lazy.spawn("emacsclient -c"), desc="Launch Emacs"),
     Key([mod], "p", lazy.spawncmd(), desc="Launch Program Launcher"),
     Key([mod, "shift"], "p", lazy.spawn(terminal), desc="Spawn a command using a prompt widget"),
     Key([mod], "e", lazy.spawn(terminal), desc="Launch Terminal File Explorer"),
     Key([mod], "w", lazy.spawn(terminal), desc="Launch Window Switcher"),
     Key([mod, "shift"], "x", lazy.spawn(terminal), desc="Launch X Kill"),
-    Key([mod, "shift"], "z", lazy.spawn(terminal), desc="Lock Screen"),
+    Key([mod, "shift"], "z", lazy.spawn("xscreensaver-command --lock"), desc="Lock Screen"),
     Key([mod], "x", lazy.spawncmd(), desc="Launch Extended Prompt"),
 
     # ScratchPad

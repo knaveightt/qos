@@ -5,5 +5,6 @@
 # knaveightt
 
 waypaper --restore &
-nm-applet &
-cbatticon &
+xscreensaver &
+# nm-applet &
+# cbatticon &
