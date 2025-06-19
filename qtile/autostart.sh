@@ -6,5 +6,5 @@
 
 waypaper --restore &
 xscreensaver &
-# nm-applet &
-# cbatticon &
+nm-applet &
+lxqt-powermanagement &

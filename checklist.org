@@ -108,7 +108,14 @@ get patterns-devel-base-devel_basis (try this from YaST!)
 - can I lock the screen with a key shortcut?
 
 ** Power Management Subsystem
+*** Packages Added
+- lxqt-powermanagement
+*** Customizations
+- lxqt-config-powermanagement
+- make sure lxqt-powermanagement runs via autostarts
+*** Confirmation Tests
+- do I see a sys icon tray?
+
 ** Audio Subsystem and Codecs
 ** Status Bar Subsystem
 ** Windowing Subsystem (look and feel, compositor)
-** Display Manager Subsystem (Final Configuration)
