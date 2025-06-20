@@ -151,11 +151,13 @@ for vt in range(1, 8):
     )
 
 groups = [
-    Group("", layout="max"),
-    Group("", layout="max"),
-    Group("", layout="max"),
-    Group("", layout="max"),
-    Group("", layout="monadtall"),
+    Group(" ", layout="monadtall"),
+    Group("󱂬 ", layout="monadtall"),
+    Group(" ", layout="monadtall"),
+    Group("󰉋 ", layout="monadtall"),
+    Group("󰊴 ", layout="monadtall"),
+    Group(" ", layout="monadtall"),
+    Group(" ", layout="monadtall"),
     ScratchPad("scratchterm",[DropDown("term","wezterm", x=0.12, y=0.02, width=0.75, height=0.6, on_focus_lost_hide=False)]),
 ]
 
@@ -163,7 +165,12 @@ from libqtile.dgroups import simple_key_binder
 dgroups_key_binder = simple_key_binder("mod4")
 
 layouts = [
-    layout.MonadTall(),
+    layout.MonadTall(
+        border_focus = "#66BAB7",
+        border_normal = "#0B1111",
+        border_width = 3,
+        margin = 10,
+    ),
     layout.Max(),
     layout.TreeTab(),
 ]
@@ -178,110 +185,82 @@ extension_defaults = widget_defaults.copy()
 def init_widgets_list():
     widgets_list = [
         widget.TextBox(
-            text="",
-            foreground = "#00AA00",
-            background = "#666666",
+            text=" ",
+            foreground = "#d0e6df",
+            background = "#3B827B",
             fontsize=12,
             padding = 10,
             markup = True,
             fmt='<span font_size="130%">{}</span>',
             ),
-        widget.Sep(
-            linewidth=0,
-            padding=0,
-            foreground = "#666666",
-            background = "#666666",
-            ),
-        widget.TextBox(
-            text="",
-            foreground = "#666666",
-            background = "#333333",
-            fontsize=22,
-            padding=0,
-            ),
-        widget.Sep(
-            linewidth=3,
-            padding=0,
-            foreground = "#333333",
-            background = "#333333",
-            ),
         widget.GroupBox(
-            highlight_method='block',
-            foreground = "#0000AA",
-            background = "#333333",
-            fontsize = 12,
-            margin_x = 3,
-            padding = 6,
+            highlight_method='line',
+            center_aligned= True,
+            foreground = "#d0e6df",
+            active = "#d0e6df",
+            background = "#0B1111",
+            highlight_color = ['#0B1111','#282828'],
+            fontsize = 14,
+            padding = 4,
+            spacing = 2,
             markup = True,
             fmt='<tt>{}</tt>',
             ),
         widget.Sep(
             linewidth=0,
             padding=0,
-            foreground = "#333333",
-            background = "#333333",
+            foreground = "#0B1111",
+            background = "#0B1111",
             ),
         widget.Prompt(
-            background = "#333333",
-            prompt = 'Command: ',
+            background = "#3B827B",
+            foreground = "#d0E6Df",
+            prompt = '   Super-x: ',
             ),
-        widget.TextBox(
-            text="",
-            foreground = "#333333",
-            background = "#000000",
-            fontsize=22,
+        widget.Sep(
+            linewidth=12,
             padding=0,
+            foreground = "#0B1111",
+            background = "#0B1111",
             ),
+        widget.TaskList(
+            highlight_method = 'block',
+            border = '#3B827B',
+            background = "#0B1111",
+            foreground = "#d0e6df",
+            margin_x = 3,
+            margin_y = 0,
+            padding_x = 6,
+            txt_floating = " ",
+            txt_maximized = " ",
+            txt_minimized = " ",
+        ),
         widget.Sep(
             linewidth=3,
             padding=0,
-            foreground = "#000000",
-            background = "#000000",
-            ),
-        widget.WindowName(),
-        widget.Sep(
-            linewidth=0,
-            padding=0,
-            foreground = "#000000",
-            background = "#000000",
-            ),
-        widget.TextBox(
-            text="",
-            foreground = "#333333",
-            background = "#000000",
-            fontsize=22,
-            padding=0,
-            ),
-        widget.Sep(
-            linewidth=3,
-            padding=0,
-            foreground = "#333333",
-            background = "#333333",
+            foreground = "#0B1111",
+            background = "#0B1111",
             ),
         widget.Clock(
             format="%Y-%m-%d %a %I:%M %p",
-            background="#333333",
+            background="#0B1111",
             ),
         widget.Sep(
             linewidth=3,
             padding=0,
-            foreground = "#333333",
-            background = "#333333",
+            foreground = "#0B1111",
+            background = "#0B1111",
             ),
         widget.TextBox(
-            text="",
-            foreground = "#666666",
-            background = "#333333",
+            text="",
+            foreground = "#3B827B",
+            background = "#0B1111",
             fontsize=22,
             padding=0,
             ),
-        widget.Sep(
-            linewidth=3,
-            padding=0,
-            foreground = "#666666",
-            background = "#666666",
-            ),
-        widget.Systray(),
+        widget.Systray(
+            background = "#3B827B",
+        ),
         ]
     return widgets_list
 
@@ -309,7 +288,7 @@ mouse = [
 
 
 dgroups_app_rules = []  # type: list
-follow_mouse_focus = True
+follow_mouse_focus = False
 bring_front_click = False
 floats_kept_above = True
 cursor_warp = False

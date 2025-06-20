@@ -8,3 +8,4 @@ waypaper --restore &
 xscreensaver &
 nm-applet &
 lxqt-powermanagement &
+picom --backend glx --vsync &

@@ -117,5 +117,25 @@ get patterns-devel-base-devel_basis (try this from YaST!)
 - do I see a sys icon tray?
 
 ** Audio Subsystem and Codecs
+*** Packages Added
+- Add, Community Repositories (Packman Repositories)
+  - zypper ar -cfp 90 'https://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed /' packman
+  - zypper dup --from packman --allow-vendor-change
+- install opi
+- zypper in opi && opi codecs
+- Futher Issues: install SOF-Firmware from packman
+- pavucontrol
+
 ** Status Bar Subsystem
 ** Windowing Subsystem (look and feel, compositor)
+*** Packages Added
+- picom
+*** Customizations
+- picom, make autostart command 'picom --backend glx --vsync &' to potentially eliminate screen tearing issues
+
+* Phase 4: Application Defaults
+
+| Fuction | Application   | Install Notes                            |
+|---------+---------------+------------------------------------------|
+| Web     | brave-browser | Follow webpage install notes to add repo |
+|         |               |                                          |
