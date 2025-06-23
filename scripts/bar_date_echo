@@ -1,0 +1,2 @@
+date_txt=$(date +"%A, %d %B %Y")
+dunstify "Today's Date Is:" "$date_txt"
