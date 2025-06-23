@@ -140,3 +140,4 @@ get patterns-devel-base-devel_basis (try this from YaST!)
 |---------+---------------+------------------------------------------|
 | Web     | brave-browser | Follow webpage install notes to add repo |
 | Term    | fastfetch     | Neofetch-like system information         |
+| Music   | mpd/ncmpcpp   | Terminal-Based music client              |
