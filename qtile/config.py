@@ -94,6 +94,11 @@ keys = [
     Key([], "F9", lazy.layout.next(), desc="Toggle"),
     Key([], "F10", lazy.layout.next(), desc="Toggle"),
     Key([], "XF86Tools", lazy.spawn(terminal), desc="Toggle"),
+
+    # Multimedia Keybindings
+    Key([], "XF86AudioMute", lazy.spawn("qos-changevolume mute", shell=True)),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("qos-changevolume 5%-", shell=True)),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("qos-changevolume 5%+", shell=True)),
   
     # Control Keybinds
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
