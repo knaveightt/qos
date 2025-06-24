@@ -127,6 +127,9 @@ get patterns-devel-base-devel_basis (try this from YaST!)
 - pavucontrol
 
 ** Status Bar Subsystem
+*** Confirmation Tests
+- does mpd / ncmpcpp work okay?
+  
 ** Windowing Subsystem (look and feel, compositor)
 *** Packages Added
 - picom
