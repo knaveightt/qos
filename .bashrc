@@ -10,10 +10,14 @@
 # here, since multilingual X sessions would not work properly if LANG is over-
 # ridden in every subshell.
 
+PATH=$PATH:~/.local/bin
+
 EDITOR=emacs
 XDG_CACHE_HOME=$HOME/.cache
 XDG_CONFIG_HOME=$HOME/.config
 XDG_DATA_HOME=$HOME/.local/share
 XDG_STATE_HOME=$HOME/.local/state
+QT_STYLE_OVERRIDE=gtk2
+QT_QPA_PLATFORM=qt5ct
 
 test -s ~/.alias && . ~/.alias || true

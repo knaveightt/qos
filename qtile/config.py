@@ -73,12 +73,15 @@ keys = [
     Key([mod, "shift"], "p", lazy.spawn(terminal), desc="Spawn a command using a prompt widget"),
     Key([mod], "e", lazy.spawn(terminal), desc="Launch Terminal File Explorer"),
     Key([mod], "w", lazy.spawn(terminal), desc="Launch Window Switcher"),
+    Key([mod, "shift"], "w", lazy.spawn("brave-browser"), desc="Launch Webbrowser"),
     Key([mod, "shift"], "x", lazy.spawn(terminal), desc="Launch X Kill"),
     Key([mod, "shift"], "z", lazy.spawn("xscreensaver-command --lock"), desc="Lock Screen"),
     Key([mod], "x", lazy.spawncmd(), desc="Launch Extended Prompt"),
+    Key([mod], "Escape", lazy.spawn("wezterm --config 'initial_cols=60' --config 'initial_rows=10' start --class launchprog launch-poweropts", shell=True), desc="Shutdown Menu"),
 
     # ScratchPad
     Key([mod], "s", lazy.group["scratchterm"].dropdown_toggle("term"), desc="Launch Extended Prompt"),
+    Key([mod, "shift"], "p", lazy.spawn("wezterm --config 'initial_cols=60' start --class launchprog launch-programs", shell=True), desc="Launch Programs Dialog"),
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
 
     # Laptop Special Keys
@@ -365,6 +368,7 @@ floating_layout = layout.Floating(
         Match(wm_class="makebranch"),  # gitk
         Match(wm_class="maketag"),  # gitk
         Match(wm_class="ssh-askpass"),  # ssh-askpass
+        Match(wm_class="launchprog"), # launch programs dialog with wezterm
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
     ]

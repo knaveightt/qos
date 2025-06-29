@@ -129,18 +129,27 @@ get patterns-devel-base-devel_basis (try this from YaST!)
 ** Status Bar Subsystem
 *** Confirmation Tests
 - does mpd / ncmpcpp work okay?
+- are scripts loaded to .local/bin and lauchable from keybinds?
   
 ** Windowing Subsystem (look and feel, compositor)
 *** Packages Added
 - picom
+- lxappearnace
+- kvantum
+- qt5ct
 *** Customizations
 - picom, make autostart command 'picom --backend glx --vsync &' to potentially eliminate screen tearing issues
 - use the included picom conf for opinionated settings
+- added to .bashrc QT_QPA_PLATFORMTHEME=qt5ct
+- added to .bashrc QT_STYLE_OVERRIDE=gtk2
 
 * Phase 4: Application Defaults
 
-| Fuction | Application   | Install Notes                            |
-|---------+---------------+------------------------------------------|
-| Web     | brave-browser | Follow webpage install notes to add repo |
-| Term    | fastfetch     | Neofetch-like system information         |
-| Music   | mpd/ncmpcpp   | Terminal-Based music client              |
+| Fuction      | Application   | Install Notes                            |
+|--------------+---------------+------------------------------------------|
+| Web          | brave-browser | Follow webpage install notes to add repo |
+| Term         | fastfetch     | Neofetch-like system information         |
+| Music        | mpd/ncmpcpp   | Terminal-Based music client              |
+| Graphics     | GIMP          |                                          |
+| Chat         | Discord       |                                          |
+| File Manager | thunar        |                                          |

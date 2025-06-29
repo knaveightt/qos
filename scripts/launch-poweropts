@@ -1,0 +1,44 @@
+#!/usr/bin/env sh
+
+# Description: Independent POSIX-compliant GUI application launcher.
+#              Fuzzy find executables in $PATH and launch an application.
+#              stdin, stdout, stderr are suppressed so CLI tools exit silently.
+#
+#              To configure launch as an independent app launcher add a keybind
+#              to open launch in a terminal e.g.,
+#
+#              xfce4-terminal -e "${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins/launch
+#
+# Dependencies: fzf
+#
+# Usage: launch [delay]
+#        delay is in seconds, if omitted launch waits for 1 sec
+#
+# Integration with nnn: launch is installed with other plugins, nnn picks it up.
+#
+# Shell: POSIX compliant
+# Author: Arun Prakash Jana
+
+# shellcheck disable=SC2086
+
+IFS=':'
+
+get_selection() {
+    if type fzf >/dev/null 2>&1; then
+        printf "Shutdown\nSuspend\nHibernate\nQuit" | fzf --border=rounded --header='                Leaving so soon?' --header-first --reverse --info=inline
+    else
+        exit 1
+    fi
+}
+
+if selection=$( get_selection ); then
+    if [ $selection = "Shutdown" ]; then
+        systemctl poweroff
+    elif [ $selection = "Suspend" ]; then
+	systemctl suspend
+    elif [ $selction = "Hibernate" ]; then
+	systemctl hibernate
+    else
+        echo "Cancelling..."
+    fi
+fi
