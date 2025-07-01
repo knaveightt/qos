@@ -71,7 +71,7 @@ keys = [
     Key([mod], "space", lazy.spawn("emacsclient -c"), desc="Launch Emacs"),
     Key([mod], "p", lazy.spawncmd(), desc="Launch Program Launcher"),
     Key([mod, "shift"], "p", lazy.spawn(terminal), desc="Spawn a command using a prompt widget"),
-    Key([mod], "e", lazy.spawn(terminal), desc="Launch Terminal File Explorer"),
+    Key([mod], "e", lazy.spawn("wezterm start --class fileterm yazi", shell=True), desc="Launch Terminal File Explorer"),
     Key([mod], "w", lazy.spawn(terminal), desc="Launch Window Switcher"),
     Key([mod, "shift"], "w", lazy.spawn("brave-browser"), desc="Launch Webbrowser"),
     Key([mod, "shift"], "x", lazy.spawn(terminal), desc="Launch X Kill"),

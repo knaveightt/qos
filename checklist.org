@@ -153,3 +153,4 @@ get patterns-devel-base-devel_basis (try this from YaST!)
 | Graphics     | GIMP          |                                          |
 | Chat         | Discord       |                                          |
 | File Manager | thunar        |                                          |
+| File Manager | yazi          | Use config                               |

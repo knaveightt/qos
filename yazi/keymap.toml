@@ -1,0 +1,6 @@
+[mgr]
+prepend_keymap = [
+	{ on = [ "i", "i" ], run = "shell 'emacsclient -t $0' --block", desc = "Open file in emacs term with `i => i`" },
+	{ on = [ "i", "o" ], run = "shell 'emacsclient -c $0'", desc = "Open file in new emacs gui with `i => o`" },
+	{ on = [ "i", "O" ], run = "shell 'emacsclient $0'", desc = "Try opening in existing emacs gui with `i => O`" },
+]
