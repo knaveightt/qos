@@ -73,7 +73,7 @@ keys = [
     Key([mod, "shift"], "p", lazy.spawn("wezterm --config 'initial_cols=60' start --class launchprog launch-programs", shell=True), desc="Launch Programs Dialog"),
     Key([mod], "e", lazy.spawn("wezterm start --class fileterm yazi", shell=True), desc="Launch Terminal File Explorer"),
     Key([mod], "w", lazy.spawn(terminal), desc="Launch Window Switcher"),
-    Key([mod, "shift"], "w", lazy.spawn("brave-browser"), desc="Launch Webbrowser"),
+    Key([mod], "w", lazy.spawn("brave-browser"), desc="Launch Webbrowser"),
     Key([mod, "shift"], "x", lazy.spawn("xkill"), desc="Launch X Kill"),
     Key([mod, "shift"], "z", lazy.spawn("xscreensaver-command --lock"), desc="Lock Screen"),
     Key([mod], "x", lazy.spawncmd(), desc="Launch Extended Prompt"),
