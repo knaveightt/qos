@@ -25,7 +25,7 @@ IFS=':'
 
 get_selection() {
     if type fzf >/dev/null 2>&1; then
-        printf "Shutdown\nSuspend\nHibernate\nQuit" | fzf --border=rounded --header='                Leaving so soon?' --header-first --reverse --info=inline
+        printf "Shutdown\nReboot\nSuspend\nHibernate\nQuit" | fzf --border=rounded --header='                Leaving so soon?' --header-first --reverse --info=inline
     else
         exit 1
     fi
@@ -34,10 +34,12 @@ get_selection() {
 if selection=$( get_selection ); then
     if [ $selection = "Shutdown" ]; then
         systemctl poweroff
+    elif [ $selection = "Reboot" ]; then
+	systemctl reboot
     elif [ $selection = "Suspend" ]; then
-        systemctl suspend
+	systemctl suspend
     elif [ $selction = "Hibernate" ]; then
-        systemctl hibernate
+	systemctl hibernate
     else
         echo "Cancelling..."
     fi
