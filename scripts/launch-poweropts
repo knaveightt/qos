@@ -35,9 +35,9 @@ if selection=$( get_selection ); then
     if [ $selection = "Shutdown" ]; then
         systemctl poweroff
     elif [ $selection = "Suspend" ]; then
-	systemctl suspend
+        systemctl suspend
     elif [ $selction = "Hibernate" ]; then
-	systemctl hibernate
+        systemctl hibernate
     else
         echo "Cancelling..."
     fi
