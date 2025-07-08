@@ -10,14 +10,14 @@
 # here, since multilingual X sessions would not work properly if LANG is over-
 # ridden in every subshell.
 
-PATH=$PATH:~/.local/bin
+PATH=$PATH:~/.local/bin:/usr/local/go/bin
 
-EDITOR=emacs
-XDG_CACHE_HOME=$HOME/.cache
-XDG_CONFIG_HOME=$HOME/.config
-XDG_DATA_HOME=$HOME/.local/share
-XDG_STATE_HOME=$HOME/.local/state
-QT_STYLE_OVERRIDE=gtk2
-QT_QPA_PLATFORM=qt5ct
+function y() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+    yazi "$@" --cwd-file="$tmp"
+    IFS= read -r -d '' cwd < "$tmp"
+    [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+    rm -f -- "$tmp"
+}
 
 test -s ~/.alias && . ~/.alias || true
