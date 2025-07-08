@@ -17,8 +17,7 @@ export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
-export QT_STYLE_OVERRIDE=gtk2
-export QT_QPA_PLATFORM=qt5ct
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 # For some news readers it makes sense to specify the NEWSSERVER variable here
 #export NEWSSERVER=your.news.server

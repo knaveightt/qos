@@ -69,9 +69,8 @@ keys = [
     # Launchers and Applications
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "space", lazy.spawn("emacsclient -c"), desc="Launch Emacs"),
-    Key([mod], "p", lazy.spawncmd(), desc="Launch Program Launcher"),
-    Key([mod, "shift"], "p", lazy.spawn("wezterm --config 'initial_cols=60' start --class launchprog launch-programs", shell=True), desc="Launch Programs Dialog"),
-    Key([mod], "e", lazy.spawn("wezterm start --class fileterm yazi", shell=True), desc="Launch Terminal File Explorer"),
+    Key([mod], "p", lazy.spawn("wezterm --config 'initial_cols=60' start --class launchprog launch-programs", shell=True), desc="Launch Programs Dialog"),
+    Key([mod], "e", lazy.spawn("wezterm start --class fileterm mc", shell=True), desc="Launch Terminal File Explorer"),
     Key([mod], "w", lazy.spawn(terminal), desc="Launch Window Switcher"),
     Key([mod], "w", lazy.spawn("brave-browser"), desc="Launch Webbrowser"),
     Key([mod, "shift"], "x", lazy.spawn("xkill"), desc="Launch X Kill"),
