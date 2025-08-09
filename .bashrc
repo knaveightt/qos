@@ -14,7 +14,7 @@ PATH=$PATH:~/.local/bin:/usr/local/go/bin:~/.local/program/jdtls/bin
 
 # NNN configuration
 export NNN_FIFO="/tmp/nnn.fifo"
-export NNN_PLUG='e:-!emacsclient -t "$nnn"*;E:-!&emacsclient -c "$nnn";f:fzopen;p:preview-tui'
+export NNN_PLUG='e:-!emacsclient -t "$nnn"*;E:-!&emacsclient -c "$nnn";f:fzcd;p:preview-tui'
 n ()
 {
     # Block nesting of nnn in subshells
