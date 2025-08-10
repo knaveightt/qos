@@ -166,13 +166,24 @@ groups = [
     ScratchPad("scratchterm",[DropDown("term","wezterm", x=0.12, y=0.02, width=0.75, height=0.6, on_focus_lost_hide=False)]),
 ]
 
+colormap = {
+    "bg": "#0d0d0e",
+    "bg_accent": "#575a9a",
+    "fg_text": "#9acbd9",
+    "border_focus": "#575a9a",
+    "group_highlight": "#282828",
+    "icon_ram": "#50d240",
+    "icon_volume": "#e29a02",
+    "icon_clock": "#fb0a0d",
+}
+
 from libqtile.dgroups import simple_key_binder
 dgroups_key_binder = simple_key_binder("mod4")
 
 layouts = [
     layout.MonadTall(
-        border_focus = "#66BAB7",
-        border_normal = "#0B1111",
+        border_focus = colormap['border_focus'],
+        border_normal = colormap['bg'],
         border_width = 3,
         margin = 10,
     ),
@@ -191,8 +202,8 @@ def init_widgets_list():
     widgets_list = [
         widget.TextBox(
             text=" ",
-            foreground = "#d0e6df",
-            background = "#3B827B",
+            foreground = colormap['fg_text'],
+            background = colormap['bg_accent'],
             fontsize=12,
             padding = 10,
             markup = True,
@@ -201,10 +212,10 @@ def init_widgets_list():
         widget.GroupBox(
             highlight_method='line',
             center_aligned= True,
-            foreground = "#d0e6df",
-            active = "#d0e6df",
-            background = "#0B1111",
-            highlight_color = ['#0B1111','#282828'],
+            foreground = colormap['fg_text'],
+            active = colormap['fg_text'],
+            background = colormap['bg'],
+            highlight_color = [colormap['bg'],colormap['group_highlight']],
             fontsize = 14,
             padding = 4,
             spacing = 2,
@@ -214,25 +225,25 @@ def init_widgets_list():
         widget.Sep(
             linewidth=0,
             padding=0,
-            foreground = "#0B1111",
-            background = "#0B1111",
+            foreground = colormap['bg'],
+            background = colormap['bg'],
             ),
         widget.Prompt(
-            background = "#3B827B",
-            foreground = "#0B1111",
+            background = colormap['bg_accent'],
+            foreground = colormap['bg'],
             prompt = '   Super-x: ',
             ),
         widget.Sep(
             linewidth=12,
             padding=0,
-            foreground = "#0B1111",
-            background = "#0B1111",
+            foreground = colormap['bg'],
+            background = colormap['bg'],
             ),
         widget.TaskList(
             highlight_method = 'block',
-            border = '#3B827B',
-            background = "#0B1111",
-            foreground = "#d0e6df",
+            border = colormap['bg_accent'],
+            background = colormap['bg'],
+            foreground = colormap['fg_text'],
             margin_x = 3,
             margin_y = 0,
             padding_x = 6,
@@ -241,8 +252,8 @@ def init_widgets_list():
             txt_minimized = " ",
         ),
         widget.Mpd2 (
-            foreground = "#0B1111",
-            background = "#3B827B",
+            foreground = colormap['bg'],
+            background = colormap['bg_accent'],
             play_states = {'pause': '', 'play': '▶', 'stop': '■'},
             max_chars = 48,
             scroll = True,
@@ -251,19 +262,19 @@ def init_widgets_list():
         widget.Sep(
             linewidth=12,
             padding=0,
-            foreground = "#0B1111",
-            background = "#0B1111",
+            foreground = colormap['bg'],
+            background = colormap['bg'],
             ),
         widget.TextBox(
             text=" ",
             fmt="<b>{}</b>",
             padding = 0,
-            background = "#0B1111",
-            foreground = "#50D240",
+            background = colormap['bg'],
+            foreground = colormap['icon_ram'],
         ),
         widget.Memory(
-            background = "#0B1111",
-            foreground = "#d0e6df",
+            background = colormap['bg'],
+            foreground = colormap['fg_text'],
             measure_mem = "G",
             format='{MemUsed: .0f}{ms}/{MemTotal: .0f}{ms}',
             fmt="{}",
@@ -271,20 +282,20 @@ def init_widgets_list():
         widget.Sep(
             linewidth=5,
             padding=0,
-            foreground = "#0B1111",
-            background = "#0B1111",
+            foreground = colormap['bg'],
+            background = colormap['bg'],
             ),
         widget.TextBox(
             text=" ",
             fmt="<b>{}</b>",
             padding = 2,
-            background = "#0B1111",
-            foreground = "#e29a02",
+            background = colormap['bg'],
+            foreground = colormap['icon_volume'],
             mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('pavucontrol')},
         ),
         widget.Volume(
-            background = "#0B1111",
-            foreground = "#d0e6df",
+            background = colormap['bg'],
+            foreground = colormap['fg_text'],
             fmt="{}",
             padding = 6,
             mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('pavucontrol')},
@@ -292,39 +303,39 @@ def init_widgets_list():
         widget.Sep(
             linewidth=3,
             padding=0,
-            foreground = "#0B1111",
-            background = "#0B1111",
+            foreground = colormap['bg'],
+            background = colormap['bg'],
             ),
         widget.TextBox(
             text=" ",
             fmt="<b>{}</b>",
             padding=2,
-            background = "#0B1111",
-            foreground = "#fb0a0d",
+            background = colormap['bg'],
+            foreground = colormap['icon_clock'],
             mouse_callbacks = {'Button1': lazy.spawn("bar_date_echo", shell=True)},
         ),
         widget.Clock(
             format="%I:%M %p",
             fmt="<b>{}</b>",
-            background="#0B1111",
-            foreground="#d0e6df",
+            background=colormap['bg'],
+            foreground=colormap['fg_text'],
             mouse_callbacks = {'Button1': lazy.spawn("bar_date_echo", shell=True)},
             ),
         widget.Sep(
             linewidth=6,
             padding=0,
-            foreground = "#0B1111",
-            background = "#0B1111",
+            foreground = colormap['bg'],
+            background = colormap['bg'],
             ),
         widget.TextBox(
             text="",
-            foreground = "#3B827B",
-            background = "#0B1111",
+            foreground = colormap['bg_accent'],
+            background = colormap['bg'],
             fontsize=22,
             padding=0,
             ),
         widget.Systray(
-            background = "#3B827B",
+            background = colormap['bg_accent'],
         ),
         ]
     return widgets_list
