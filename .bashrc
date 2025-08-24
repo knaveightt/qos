@@ -12,6 +12,30 @@
 
 PATH=$PATH:~/.local/bin:/usr/local/go/bin:~/.local/program/jdtls/bin
 
+# Aliases
+alias v='nvim'
+
+# Prompt Configuration
+function parse_git_branch() {
+    BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+    if [ "${BRANCH}" == "" ]
+    then
+        echo ""
+    else
+        echo " (${BRANCH})"
+    fi
+}
+function multiline_prompt() {
+    GREEN='\[\033[01;32m\]'
+    BLUE='\[\033[01;34m\]'
+    ORANGE='\[\033[38;5;202m\]'
+    RESET='\[\033[00m\]'
+    MODLINE="(${GREEN}\u@\h${RESET})-[${BLUE}\w${RESET}]${ORANGE}\`parse_git_branch\`${RESET}"
+        export PS1="┌──$MODLINE
+└─\$ "
+} 
+multiline_prompt
+
 # NNN configuration
 export NNN_FIFO="/tmp/nnn.fifo"
 export NNN_PLUG='e:-!emacsclient -t "$nnn"*;E:-!&emacsclient -c "$nnn";f:fzcd;p:preview-tui'

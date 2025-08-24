@@ -11,7 +11,8 @@ test -z "$PROFILEREAD" && . /etc/profile || true
 # editor. So uncomment the line below and enter the editor of your choice :-)
 #export EDITOR=/usr/bin/vim
 #export EDITOR=/usr/bin/mcedit
-export EDITOR="emacsclient -t"
+#export EDITOR="emacsclient -t"
+export EDITOR="/usr/local/bin/nvim"
 
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
