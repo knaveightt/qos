@@ -14,6 +14,8 @@ PATH=$PATH:~/.local/bin:/usr/local/go/bin:~/.local/program/jdtls/bin
 
 # Aliases
 alias v='nvim'
+alias t='tmux'
+alias ts='~/.config/tmux/tsession.sh'
 
 # Prompt Configuration
 function parse_git_branch() {
