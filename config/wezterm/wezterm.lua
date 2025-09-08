@@ -6,10 +6,11 @@ config.font_size = 13
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 
 -- colors
-config.colors = {
-    cursor_bg = "gray",
-    cursor_border = "gray",
-}
+-- config.colors = {
+--     cursor_bg = "gray",
+--     cursor_border = "gray",
+-- }
+config.colors = require("cyberdream")
 
 -- appearance
 config.window_decorations = "RESIZE"
