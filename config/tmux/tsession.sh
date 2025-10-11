@@ -2,6 +2,7 @@
 
 DIRS=(
     "$HOME/Projects"
+    "$HOME/.local/share/nvim/site/pack/wims/start"
 )
 
 if [[ $# -eq 1 ]]; then

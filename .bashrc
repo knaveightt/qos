@@ -10,12 +10,13 @@
 # here, since multilingual X sessions would not work properly if LANG is over-
 # ridden in every subshell.
 
-PATH=$PATH:~/.local/bin:/usr/local/go/bin:~/.local/program/jdtls/bin
+PATH=$PATH:~/.local/bin:/usr/local/go/bin:~/go/bin
 
 # Aliases
 alias v='nvim'
 alias t='tmux'
-alias ts='~/.config/tmux/tsession.sh'
+alias ts='sesh connect $(sesh list | fzf)'
+alias tls='tmux ls'
 
 # Prompt Configuration
 function parse_git_branch() {
@@ -73,3 +74,6 @@ n ()
 }
 
 test -s ~/.alias && . ~/.alias || true
+
+# load zoxide
+eval "$(zoxide init bash)"
