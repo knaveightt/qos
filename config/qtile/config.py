@@ -72,6 +72,7 @@ keys = [
     Key([mod], "p", lazy.spawn("wezterm --config 'initial_cols=60' start --class launchprog launch-programs", shell=True), desc="Launch Programs Dialog"),
     Key([mod], "e", lazy.spawn("thunar", shell=True), desc="Launch Terminal File Explorer"),
     Key([mod], "w", lazy.spawn("brave-browser"), desc="Launch Webbrowser"),
+    Key([mod], "m", lazy.spawn("wezterm start --class nocompiz"), desc="Launch Blank Terminal"),
     Key([mod, "shift"], "x", lazy.spawn("xkill"), desc="Launch X Kill"),
     Key([mod, "shift"], "z", lazy.spawn("xscreensaver-command --lock"), desc="Lock Screen"),
     Key([mod], "x", lazy.spawncmd(), desc="Launch Extended Prompt"),
@@ -156,7 +157,7 @@ for vt in range(1, 8):
     )
 
 groups = [
-    Group(" ", layout="monadtall"),
+    Group(" ", layout="monadtall"),
     Group("󱂬 ", layout="monadtall"),
     Group(" ", layout="monadtall"),
     Group("󰉋 ", layout="monadtall"),
@@ -231,7 +232,7 @@ def init_widgets_list():
         widget.Prompt(
             background = colormap['bg_accent'],
             foreground = colormap['bg'],
-            prompt = '   Super-x: ',
+            prompt = '   Ex.Commmand: ',
             ),
         widget.Sep(
             linewidth=12,
